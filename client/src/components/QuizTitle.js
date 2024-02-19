@@ -7,7 +7,7 @@ const QuizTitle = () => {
 
   useEffect(() => {
     // Fetch quiz data based on the selected title from the API endpoint
-    fetch(`/quizzes/show_by_title/${encodeURIComponent(title)}`)  // Update the route here
+    fetch(`/quizzes/show_by_title/${encodeURIComponent(title)}`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`Quiz not found: ${response.status}`);

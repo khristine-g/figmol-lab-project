@@ -18,9 +18,38 @@
     background-color: #2980b9;
   }
 
-  .text-box{
-    margin:20px;
-    width:400px;
-    
+  .text-box {
+    margin: 20px;
+    width: 400px;
   }
-  
+
+  .quiz-form-container {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+
+  .question-input,
+  .answer-input,
+  .correct-answer-select {
+    width: 100%;
+    margin-top: 5px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .add-answer-button,
+  .add-question-button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 20px;
+  }
+
+  .add-answer-button:hover,
+  .add-question-button:hover {
+    background-color: #27ae60;
+  }

@@ -8,8 +8,8 @@ import Navbar from './components/Navbar';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import QuizTitle from './components/QuizTitle';
-import QuizTitles from './components/QuizTitles'; // Import QuizTitles
-import AdminDashboard from './components/AdminDashboard'; // Import AdminDashboard
+import QuizTitles from './components/QuizTitles'; 
+import AdminDashboard from './components/AdminDashboard';
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/quizzes/titles" element={<QuizTitles />} />
-        <Route path="/admin-dashboard" element={<AdminDashboard />} /> {/* Add AdminDashboard route */}
+        <Route path="/admin-dashboard" element={<AdminDashboard />} /> 
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
