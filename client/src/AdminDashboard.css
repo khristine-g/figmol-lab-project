@@ -1,0 +1,26 @@
+/* AdminDashboard.css */
+.admin-dashboard-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .save-quiz-button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .save-quiz-button:hover {
+    background-color: #2980b9;
+  }
+
+  .text-box{
+    margin:20px;
+    width:400px;
+    
+  }
+  
