@@ -1,0 +1,38 @@
+.navbar{
+
+    /* margin-bottom:1px; */
+    background-color: teal;
+    
+
+}
+.quiz-nav{
+    display: flex;
+    list-style: none;
+   float:right;
+
+   margin-left:1000px;
+   
+    
+}
+.quiz-nav li{
+    margin: 10px;
+    color: black;
+
+}
+
+ .lab-name{
+    /* background-color: #000080; */
+    height: 80px;
+    color: white;
+    margin: 30px;
+   
+
+    
+  
+    font-family:sans-serif ;
+    font-weight: bold;
+}
+.top{
+    background-color: #000080;
+    
+}

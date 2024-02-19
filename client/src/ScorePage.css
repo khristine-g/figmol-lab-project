@@ -1,0 +1,48 @@
+.score-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .score-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: blue;
+  }
+  
+  .score {
+    font-size: 18px;
+    color: blue;
+  }
+  
+  .incorrect-questions {
+    margin-top: 40px;
+  }
+  
+  .incorrect-question {
+    margin-bottom: 40px;
+  }
+  
+  .question-content {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .answer-info {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: blue;
+  }
+  
+  .correct-answer {
+    color: green;
+  }
+  
+  .incorrect-answer {
+    color: red;
+  }
+  .answer-list{
+
+    list-style: none;
+  }
+  
