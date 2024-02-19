@@ -3,6 +3,7 @@ class QuizzesController < ApplicationController
   
     def index
       @quizzes = Quiz.all
+      render json: @quizzes
     end
   
     def show
@@ -14,18 +15,39 @@ class QuizzesController < ApplicationController
     end
   
     def create
-      @quiz = Quiz.new(quiz_params)
-  
-      if @quiz.save
-        redirect_to @quiz, notice: 'Quiz was successfully created.'
-      else
-        render :new
+        @quiz = Quiz.new(quiz_params)
+    
+        if @quiz.save
+          render json: @quiz, status: :created
+        else
+          render json: @quiz.errors, status: :unprocessable_entity
+        end
       end
-    end
+
+      def create_quiz
+       
+        @quiz = Quiz.new(quiz_params)
+    
+        if @quiz.save
+          render json: @quiz, status: :created
+        else
+          render json: @quiz.errors, status: :unprocessable_entity
+        end
+      end
   
     def edit
       # @quiz is already set by before_action
     end
+
+    def show_by_title
+        @quiz = Quiz.find_by(title: params[:title])
+    
+        if @quiz
+          render json: @quiz
+        else
+          render json: { error: 'Quiz not found' }, status: :not_found
+        end
+      end
   
     def update
       if @quiz.update(quiz_params)
@@ -39,6 +61,8 @@ class QuizzesController < ApplicationController
       @quiz.destroy
       redirect_to quizzes_url, notice: 'Quiz was successfully destroyed.'
     end
+
+
   
     private
   
@@ -47,7 +71,7 @@ class QuizzesController < ApplicationController
     end
   
     def quiz_params
-      params.require(:quiz).permit(:title)
-    end
+        params.require(:quiz).permit(:title, questions_attributes: [:content, answers_attributes: [:content, :correct]])
+      end
   end
   
