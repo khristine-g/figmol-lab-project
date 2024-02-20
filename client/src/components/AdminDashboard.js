@@ -1,14 +1,10 @@
-
-
-
 import React, { useState } from "react";
 import "../AdminDashboard.css";
 
 const AdminDashboard = () => {
   const [quizTitle, setQuizTitle] = useState("");
-
   const [questions, setQuestions] = useState([
-    { content: "", answers: [""], correctAnswerId: null },
+    { content: "", answers: [{ content: "" }], correctAnswerId: null },
   ]);
 
   const handleQuizTitleChange = (e) => {
@@ -18,23 +14,29 @@ const AdminDashboard = () => {
   const handleAddQuestion = () => {
     setQuestions((prevQuestions) => [
       ...prevQuestions,
-      { content: "", answers: [""], correctAnswerId: null },
+      { content: "", answers: [{ content: "" }], correctAnswerId: null },
     ]);
+  };
+
+  const handleAddAnswer = (questionIndex) => {
+    const updatedQuestions = [...questions];
+    updatedQuestions[questionIndex].answers.push({ content: "" });
+    setQuestions(updatedQuestions);
   };
 
   const handleSaveQuiz = async () => {
     try {
-      // Save quiz details (title, topic, subtopic) to the backend
       const quizData = {
         title: quizTitle,
-        questions: questions.map((question) => ({
+        questions_attributes: questions.map((question) => ({
           content: question.content,
-          answers: question.answers.map((answer) => ({
+          answers_attributes: question.answers.map((answer, answerIndex) => ({
             content: answer.content,
-            correct: answer.correct,
+            correct: answerIndex === question.correctAnswerId,
           })),
         })),
       };
+
       const token = localStorage.getItem("jwtToken");
 
       const response = await fetch("/create-quiz", {
@@ -43,7 +45,7 @@ const AdminDashboard = () => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(quizData),
+        body: JSON.stringify({ quiz: quizData }),
       });
 
       if (!response.ok) {
@@ -52,7 +54,6 @@ const AdminDashboard = () => {
 
       const data = await response.json();
       console.log("Quiz created successfully:", data);
-
       // Optionally, you can redirect the admin or perform other actions
     } catch (error) {
       console.error("Error saving quiz:", error);
@@ -99,10 +100,10 @@ const AdminDashboard = () => {
                 <input
                   type="text"
                   className="answer-input"
-                  value={answer}
+                  value={answer.content}
                   onChange={(e) => {
                     const updatedQuestions = [...questions];
-                    updatedQuestions[index].answers[answerIndex] =
+                    updatedQuestions[index].answers[answerIndex].content =
                       e.target.value;
                     setQuestions(updatedQuestions);
                   }}
@@ -112,11 +113,7 @@ const AdminDashboard = () => {
           ))}
           <button
             className="add-answer-button"
-            onClick={() => {
-              const updatedQuestions = [...questions];
-              updatedQuestions[index].answers.push("");
-              setQuestions(updatedQuestions);
-            }}
+            onClick={() => handleAddAnswer(index)}
           >
             Add Answer
           </button>
@@ -124,23 +121,25 @@ const AdminDashboard = () => {
           <label className="correct-answer-label">
             Correct Answer:
             <select
-              className="correct-answer-select"
-              value={question.correctAnswerId}
-              onChange={(e) => {
-                const updatedQuestions = [...questions];
-                updatedQuestions[index].correctAnswerId = parseInt(
-                  e.target.value,
-                  10
-                );
-                setQuestions(updatedQuestions);
-              }}
-            >
-              {question.answers.map((answer, answerIndex) => (
-                <option key={answerIndex} value={answerIndex}>
-                  {String.fromCharCode(97 + answerIndex)}
-                </option>
-              ))}
-            </select>
+  className="correct-answer-select"
+  value={question.correctAnswerId}
+  onChange={(e) => {
+    const updatedQuestions = [...questions];
+    updatedQuestions[index].correctAnswerId = parseInt(
+      e.target.value,
+      10
+    );
+    setQuestions(updatedQuestions);
+  }}
+>
+  {question.answers.map((answer, answerIndex) => (
+    <option key={answerIndex} value={answerIndex}>
+      {String.fromCharCode(97 + answerIndex)}
+    </option>
+  ))}
+</select>
+
+
           </label>
           <br />
         </div>
@@ -160,4 +159,6 @@ const AdminDashboard = () => {
 };
 
 export default AdminDashboard;
+
+
 

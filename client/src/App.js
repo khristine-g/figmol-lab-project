@@ -18,7 +18,8 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/quiz" element={<Quiz />} />
+      <Route path="/quiz/:id" element={<Quiz />} />
+
         <Route path="/quizzes/titles" element={<QuizTitles />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} /> 
         <Route path="/" element={<Home />} />

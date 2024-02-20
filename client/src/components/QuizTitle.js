@@ -28,6 +28,7 @@ const QuizTitle = () => {
   return (
     <div>
       <h1>{quiz.title}</h1>
+     
       {/* Render other quiz details as needed */}
     </div>
   );
