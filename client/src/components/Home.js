@@ -4,23 +4,25 @@ import '../Home.css';
 
 const Home = () => {
   return (
-    <div className='home-background'>
+    <div className='home-container'>
+    
     <div className='home-body'>
-      <img
-        className="home-img"
-        src="https://wallpapers.com/images/hd/minimalistic-cyan-chemistry-lab-eoiujag5rlfbi5hm.jpg"
-        alt="research-img"
-      />
-      <div className="home-text">
-        <h1>FIGMOL LAB</h1>
-        <h1 className='home-header'>Test your knowledge</h1>
-        <p>
-          Test your knowledge with our quizzes! Click the button below to start.
-        </p>
-        <Link to="/quiz" className="btn btn-primary">
-          Go to Quizzes
-        </Link>
-        </div>
+
+      <h1 className='home-header'>Hello there,welcome to Figmol</h1>
+
+      <p className='home-content'>We are your website for all your biochemistry needs.
+      We have a team of amazing biochemists</p>
+
+      <Link className='title-link' to=" /quizzes/titles">See More</Link>
+     
+       
+
+      
+      </div>
+      <div>
+      <img className='home-img'src='https://img.freepik.com/premium-vector/collection-colored-thin-icon-learning-subject-book-graduated-hat-learning-education-concept-vector-illustration_168824-141.jpg' alt='education-img'/>
+
+      {/* <img src = " https://i0.wp.com/www.differencebetween.com/wp-content/uploads/2011/08/Difference-Between-School-and-Education_Education.jpg"alt="education-img" /> */}
       </div>
     </div>
   );

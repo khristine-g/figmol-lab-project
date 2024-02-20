@@ -118,7 +118,7 @@ const Signup = ({ csrfToken }) => {
         <form onSubmit={handleSubmit} className="signup-form">
           {error && <p className="error-message">{error}</p>}
           <div className="form-group">
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">Name:</label>
             <input
               type="text"
               className="form-control"
@@ -128,10 +128,10 @@ const Signup = ({ csrfToken }) => {
               onChange={handleNameChange}
               required
             />
-            {!name && <p className="input-error-message">Name is required.</p>}
+            {!name && <p className="input-error-message"></p>}
           </div>
           <div className="form-group">
-            <label htmlFor="email">Email address</label>
+            <label htmlFor="email">Email address:</label>
             <input
               type="email"
               className="form-control"
@@ -142,10 +142,10 @@ const Signup = ({ csrfToken }) => {
               onChange={handleEmailChange}
               required
             />
-            {!email && <p className="input-error-message">Email is required.</p>}
+            {!email && <p className="input-error-message"></p>}
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Password:</label>
             <input
               type="password"
               className="form-control"
@@ -155,10 +155,10 @@ const Signup = ({ csrfToken }) => {
               onChange={handlePasswordChange}
               required
             />
-            {!password && <p className="input-error-message">Password is required.</p>}
+            {!password && <p className="input-error-message"></p>}
           </div>
           <div className="form-group">
-            <label htmlFor="confirmPassword">Confirm Password</label>
+            <label htmlFor="confirmPassword">Confirm Password:</label>
             <input
               type="password"
               className="form-control"

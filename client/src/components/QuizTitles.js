@@ -42,7 +42,7 @@ const QuizTitles = () => {
 
   return (
     <div>
-      <h1>Topics</h1>
+      <h1 className='title-header'> Topics</h1>
       {quizzes.length === 0 ? (
         <p>No quiz titles available.</p>
       ) : (
