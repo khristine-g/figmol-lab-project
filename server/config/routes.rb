@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :users
-  resources :quizzes, only: [:index, :show] do
+  resources :quizzes, only: [:index, :show, :create] do
     resources :questions, only: [:index, :show] do
       resources :answers, only: [:index, :show]
     end
@@ -11,4 +11,7 @@ Rails.application.routes.draw do
 
   post '/create-quiz', to: 'quizzes#create_quiz'
   get '/quizzes/show_by_title/:title', to: 'quizzes#show_by_title'
+
+ 
+  get '/quizzes/:id', to: 'quizzes#show_by_title'
 end
