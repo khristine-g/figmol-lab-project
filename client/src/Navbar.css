@@ -21,6 +21,7 @@
 .nav-list{
     display: flex;
     list-style: none;
+   
     
    
  
@@ -29,6 +30,7 @@
 .nav-list-item{
     margin: 20px;
     text-decoration: none;
+    color: black;
   
 
 

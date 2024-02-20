@@ -1,0 +1,30 @@
+.more-header1{
+   
+    
+
+
+
+}
+.card-container {
+   
+    display: flex;
+    justify-content: space-between;
+    margin-left: 60px;
+    margin-right: 60px;
+  
+  }
+  
+  .card {
+    border: 1px solid black;
+    width: 30%; 
+    margin: 30px;
+    padding: 20px;
+ 
+  }
+  .card-image{
+
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+  }
+  
