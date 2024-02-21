@@ -62,10 +62,12 @@ class QuizzesController < ApplicationController
     end
   
     def destroy
-      @quiz.destroy
-      redirect_to quizzes_url, notice: 'Quiz was successfully destroyed.'
+      if @quiz.destroy
+        render json: { message: 'Quiz deleted successfully' }, status: :ok
+      else
+        render json: { error: 'Failed to delete quiz' }, status: :unprocessable_entity
+      end
     end
-
 
   
     private

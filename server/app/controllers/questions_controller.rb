@@ -18,9 +18,9 @@ class QuestionsController < ApplicationController
       @question = @quiz.questions.build(question_params)
   
       if @question.save
-        redirect_to quiz_questions_path(@quiz), notice: 'Question was successfully created.'
+        render json: @question, status: :created
       else
-        render :new
+        render json: @question.errors, status: :unprocessable_entity
       end
     end
   
@@ -38,7 +38,7 @@ class QuestionsController < ApplicationController
   
     def destroy
       @question.destroy
-      redirect_to quiz_questions_path(@quiz), notice: 'Question was successfully destroyed.'
+      render json: { message: 'Question was successfully destroyed.' }
     end
   
     private

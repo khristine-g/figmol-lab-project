@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :users
-  resources :quizzes, only: [:index, :show, :create] do
-    resources :questions, only: [:index, :show] do
-      resources :answers, only: [:index, :show]
+  resources :quizzes, only: [:index, :show, :create, :edit, :update, :destroy] do
+    resources :questions, only: [:index, :show, :create, :edit, :update, :destroy] do
+      resources :answers, only: [:index, :show, :create, :edit, :update, :destroy]
     end
   end
 
