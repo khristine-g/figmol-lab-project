@@ -1,0 +1,90 @@
+/* QuizEditor.css */
+
+.quiz-editor-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+  }
+  
+  .quiz-editor-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .delete-quiz-button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Styles for the form */
+  form {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  .new-answer-container {
+    margin-bottom: 10px;
+  }
+  
+  .correct-answer-label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .correct-answer-select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .add-answer-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Styles for existing questions */
+  .question-container {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+  }
+  
+  .question-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .delete-question-button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  

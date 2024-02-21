@@ -14,8 +14,10 @@ const ScorePage = ({ score, totalQuestions, incorrectAnswers }) => {
             {incorrectAnswers.map(({ question, selectedAnswer, correctAnswer }) => (
               <li key={question.id} className="incorrect-question">
                 <p className="question-content">{question.content}</p>
-                <p className="answer-info">{`Your Answer: ${selectedAnswer.content}`}</p>
-                <p className="answer-info">{`Correct Answer: ${correctAnswer.content}`}</p>
+                
+                {/* Check if selectedAnswer and correctAnswer are defined before accessing content */}
+                <p className="answer-info">{`Your Answer: ${selectedAnswer ? selectedAnswer.content : 'N/A'}`}</p>
+                <p className="answer-info">{`Correct Answer: ${correctAnswer ? correctAnswer.content : 'N/A'}`}</p>
               </li>
             ))}
           </ul>
@@ -26,5 +28,4 @@ const ScorePage = ({ score, totalQuestions, incorrectAnswers }) => {
 };
 
 export default ScorePage;
-
 

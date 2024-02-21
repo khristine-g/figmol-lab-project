@@ -39,6 +39,12 @@ function Navbar() {
           </Link>
 
   </li>
+  <li> 
+    <Link className="nav-list-item" to="/quizzes/:id">
+            Quiz Editor
+          </Link>
+
+  </li>
       
       
       
