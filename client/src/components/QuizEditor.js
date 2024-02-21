@@ -119,10 +119,20 @@ const QuizEditor = () => {
 
   const handleNewQuestionSubmit = async (event) => {
     event.preventDefault();
+
+    if (!selectedQuizId) {
+        console.error('Quiz ID is undefined.');
+        return;
+      }
+      console.log('Quiz ID:', selectedQuizId);
+      
+      
+
     try {
       const token = localStorage.getItem("jwtToken");
 
-      const response = await fetch(`/quizzes/${encodeURIComponent(id)}/questions`, {
+      const response = await fetch(`/quizzes/${encodeURIComponent(selectedQuizId)}/questions`, {
+
         method: "POST",
         headers: {
           "Content-Type": "application/json",
