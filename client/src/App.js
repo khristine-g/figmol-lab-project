@@ -11,10 +11,12 @@ import QuizTitle from './components/QuizTitle';
 import QuizTitles from './components/QuizTitles'; 
 import AdminDashboard from './components/AdminDashboard';
 import QuizEditor from './components/QuizEditor';
+import { AuthProvider } from './components/AuthContext';
 
 
 function App() {
   return (
+    <AuthProvider>
     <Router>
       <Navbar />
 
@@ -30,6 +32,7 @@ function App() {
         <Route path="/quizzes/:title" element={<QuizTitle />} />
       </Routes>
     </Router>
+    </AuthProvider>
   );
 }
 
