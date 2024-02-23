@@ -7,11 +7,14 @@ import '../Navbar.css';
 function Navbar() {
   const { user } = useAuth(); // Get user details from AuthContext
 
+
+  console.log("User details:", user);
+
   return (
     <div className='navbar-container'>
       <nav className="navbar" >
         <ul className='nav-list'>
-          <li> 
+          <li className='home-nav'> 
             <Link className="nav-list-item" to="/">
               Home
             </Link>
@@ -20,6 +23,12 @@ function Navbar() {
           <li> 
             <Link className="nav-list-item" to="/quizzes/titles">
               Go to Titles
+            </Link>
+          </li>
+
+          <li> 
+            <Link className="nav-list-item" to="/quizzes/titles">
+              About 
             </Link>
           </li>
 

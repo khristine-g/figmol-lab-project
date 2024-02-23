@@ -1,47 +1,25 @@
+.home-container {
+ margin-bottom: 200px;
+}
 
-.home-container{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  height: 60vh;
-  margin-bottom: 300px;
-  }
+.home-img {
+  /* Add your styles for the image */
+  width: 100%; /* Adjust as needed */
+  height: auto; /* Adjust as needed */
+}
 
-  
-  .home-header{
+.image-text {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 38px;
+  text-align: center;
 
-    color: orangered;
-    margin-bottom: 10px;
-    margin-top: 0px;
-    margin-left: 40px;
-    font-size: 50px;
-  }
-  .home-content{
-    margin-left: 40px;
-    font-size: 18px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
 
-  }
-  .home-img{
-    margin-left: 20px;
 
 
-  }
-  .home-body{
 
-    margin-top: 0px;
-  }
-  .title-link{
-
-    background-color: orangered;
-    color: wheat;
-    text-decoration: none;
-    margin-left: 150px;
-
-   
-    border-radius: 64px;
-    padding: 10px 20px;
-    
-  }
-  

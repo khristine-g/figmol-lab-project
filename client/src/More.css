@@ -1,30 +1,48 @@
-.more-header1{
-   
-    margin-left: 200px;
+/* More.css */
 
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 150px;
+}
+
+.card {
+  width: 20rem;
+  height: 300px; 
+  margin-bottom: 20px;
+  margin: 50px;
+  padding: 30px;
+  transition: transform 0.3s ease; 
+}
+.card:hover {
+  transform: scale(1.1); 
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-number{
+
+  color: white;
+  background-color: blue;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  margin-top: 30px;
 
 
 }
-.card-container {
-   
-    display: flex;
-    justify-content: space-between;
-    margin-left: 60px;
-    margin-right: 60px;
-  
-  }
-  
-  .card {
-    border: 1px solid black;
-    width: 30%; 
-    margin: 30px;
-    padding: 20px;
- 
-  }
-  .card-image{
+.card-title{
 
-    width: 100%;
-    height: 60%;
-    object-fit: cover;
-  }
-  
+  margin-top: 10px;
+}
+.card-text{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+  margin-top: 5px;
+  font-size: 15px;
+}

@@ -1,46 +1,47 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import More from './More';
+import Discover from './Discover';
 import '../Home.css';
 
+
 const Home = () => {
+  const images = [
+    {
+      src: 'https://www.uniservitate.org/wp-content/uploads/2021/04/identify-a-service-learning-experience.jpg',
+      text: 'Education is the key to success.',
+    },
+    {
+      src: 'https://wpvip.edutopia.org/wp-content/uploads/2022/12/2BN341F-crop.jpg',
+      text: 'Continuous learning leads to growth.',
+    },
+    {
+      src: ' https://www.turnitin.com/assets/images/resources/intro-images/all-the-turnitin-feedback-studio-features-and-resources-to-increase-student-learning-academic-integrity-plagiarism.png',
+      text: 'Empower yourself through knowledge.',
+    },
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Change 5000 to the desired time interval in milliseconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <>
-    <div className='home-container'>
-    
-    <div className='home-body'>
-
-      <h1 className='home-header'>Hello there,welcome to Figmol</h1>
-
-      <p className='home-content'>We are your website for all your biochemistry needs.
-      We have a team of amazing biochemists.We are your website for all your biochemistry needs.
-      We have a team of amazing biochemists.</p>
-      <p className='home-content'>We are your website for all your biochemistry needs.
-      We have a team of amazing biochemists.We are your website for all your biochemistry needs.
-      We have a team of amazing biochemists.</p>
-      <p className='home-content'>We are your website for all your biochemistry needs.
-      We have a team of amazing biochemists.We are your website for all your biochemistry needs.
-      We have a team of amazing biochemists.</p>
-
-      <Link className='title-link' to="/quizzes/titles">See More</Link>
-     
-       
-
-      
+      <div className='home-container'>
+        <div>
+          <img className='home-img' src={images[currentImageIndex].src} alt='education-img' />
+          <p className='image-text'>{images[currentImageIndex].text}</p>
+        
+        </div>
       </div>
-      <div>
-      <img className='home-img'src='https://img.freepik.com/premium-vector/collection-colored-thin-icon-learning-subject-book-graduated-hat-learning-education-concept-vector-illustration_168824-141.jpg' alt='education-img'/>
-
-      {/* <img src = " https://i0.wp.com/www.differencebetween.com/wp-content/uploads/2011/08/Difference-Between-School-and-Education_Education.jpg"alt="education-img" /> */}
-      </div>
-    </div>
-
-    <More />
-
-  
-
+      <More />
+      <Discover />
     </>
-    
   );
 };
 
