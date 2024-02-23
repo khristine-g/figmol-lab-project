@@ -3,7 +3,7 @@ import '../Discover.css';
 
 const Discover = () => {
   return (
-    <div className='discover-container'>
+    <div id = "about" className='discover-container'>
 
 <div className='discover-content'>
 

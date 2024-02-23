@@ -18,7 +18,7 @@
   .nav-list {
     display: flex;
     list-style: none;
-    padding: 10px;
+    /* padding: 10px; */
   }
   
   .nav-list-item {
@@ -26,10 +26,18 @@
     text-decoration: none;
     color: black;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    font-size: 18px;
   }
   .nav-list :hover{
 
     background-color: blue;
+    cursor: pointer;
+ 
+   
+
+    
+
   }
   
   

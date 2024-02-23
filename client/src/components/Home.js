@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import More from './More';
 import Discover from './Discover';
+import Contact from './Contact';
+import Footer from './Footer';
 import '../Home.css';
 
 
@@ -32,7 +34,7 @@ const Home = () => {
 
   return (
     <>
-      <div className='home-container'>
+      <div  className='home-container'>
         <div>
           <img className='home-img' src={images[currentImageIndex].src} alt='education-img' />
           <p className='image-text'>{images[currentImageIndex].text}</p>
@@ -40,7 +42,9 @@ const Home = () => {
         </div>
       </div>
       <More />
-      <Discover />
+      <Discover id=" about"/>
+      <Contact  id="contact"/>
+      <Footer />
     </>
   );
 };

@@ -11,6 +11,7 @@ import QuizTitle from './components/QuizTitle';
 import QuizTitles from './components/QuizTitles'; 
 import AdminDashboard from './components/AdminDashboard';
 import QuizEditor from './components/QuizEditor';
+
 import { AuthProvider } from './components/AuthContext';
 
 
@@ -26,10 +27,12 @@ function App() {
         <Route path="/quizzes/titles" element={<QuizTitles />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} /> 
         <Route path="/quizzes/:id" element={<QuizEditor />} /> 
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home   />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/quizzes/:title" element={<QuizTitle />} />
+       
+
       </Routes>
     </Router>
     </AuthProvider>

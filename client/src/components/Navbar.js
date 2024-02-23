@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from './AuthContext'; // Import the AuthContext
+import { Link as ScrollLink } from 'react-scroll';
 
 import '../Navbar.css';
 
@@ -16,20 +17,28 @@ function Navbar() {
         <ul className='nav-list'>
           <li className='home-nav'> 
             <Link className="nav-list-item" to="/">
+              
               Home
             </Link>
           </li>
 
           <li> 
             <Link className="nav-list-item" to="/quizzes/titles">
-              Go to Titles
+               Titles
             </Link>
           </li>
 
           <li> 
-            <Link className="nav-list-item" to="/quizzes/titles">
-              About 
-            </Link>
+          <ScrollLink className="nav-list-item" to="about" smooth={true} duration={500}>
+              About
+            </ScrollLink>
+          </li>
+          <li> 
+           
+          <ScrollLink className="nav-list-item" to="contact" smooth={true} duration={500}>
+              Contact 
+            </ScrollLink>
+            
           </li>
 
           <li> 
@@ -44,7 +53,7 @@ function Navbar() {
             </Link>
           </li>
 
-          {user && user.isAdmin && ( // Only render for logged-in admins
+          {user && user.isAdmin && ( 
             <>
               <li> 
                 <Link className="nav-list-item" to="/admin-dashboard">
