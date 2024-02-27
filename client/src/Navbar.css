@@ -12,7 +12,7 @@
   .navbar {
     display: flex;
     align-items: flex-end;
-    margin-left: 600px;
+    margin-left: 300px;
   }
   
   .nav-list {
@@ -30,8 +30,8 @@
     font-size: 18px;
   }
   .nav-list :hover{
-
-    background-color: blue;
+/* 
+    background-color: blue; */
     cursor: pointer;
  
    

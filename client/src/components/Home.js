@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import More from './More';
 import Discover from './Discover';
 import Contact from './Contact';
@@ -36,8 +37,13 @@ const Home = () => {
     <>
       <div  className='home-container'>
         <div>
+         
           <img className='home-img' src={images[currentImageIndex].src} alt='education-img' />
+          {/* <h2 className='home-header'>Figmol</h2> */}
           <p className='image-text'>{images[currentImageIndex].text}</p>
+          <Link className='signup-link' to='/signup'>
+            Signup
+          </Link>
         
         </div>
       </div>

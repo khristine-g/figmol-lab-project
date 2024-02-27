@@ -13,7 +13,7 @@ const Discover = () => {
 
         <img className='discover-img' src=' https://live.staticflickr.com/7639/28286579442_d94bdee593_w.jpg ' alt='discover-img' />
 
-    <h5 className='discover-header'> Professional Trainers </h5>
+    <h5 className='discover-header'> Our Mission </h5>
     <p className='discover-text'> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint ipsa voluptatibus.</p>
 
     </div>
@@ -21,7 +21,7 @@ const Discover = () => {
     <div className='discover-image-container'>
     <img className='discover-img' src='https://cdn-icons-png.flaticon.com/512/4366/4366867.png ' alt='discover-img' />
 
-    <h5 className='discover-header'> International Certifications </h5>
+    <h5 className='discover-header'> Our vision </h5>
     <p className='discover-text'> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint ipsa voluptatibus.</p>
 
     </div>
