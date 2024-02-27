@@ -51,6 +51,9 @@ class QuizzesController < ApplicationController
         render json: { error: 'Quiz not found' }, status: :not_found
       end
     end
+
+
+    
     
     
     def update
@@ -62,18 +65,30 @@ class QuizzesController < ApplicationController
     end
   
     def destroy
-      if @quiz.destroy
-        render json: { message: 'Quiz deleted successfully' }, status: :ok
+      if @quiz
+        if @quiz.destroy
+          render json: { message: 'Quiz deleted successfully' }, status: :ok
+        else
+          render json: { error: 'Failed to delete quiz' }, status: :unprocessable_entity
+        end
       else
-        render json: { error: 'Failed to delete quiz' }, status: :unprocessable_entity
+        render json: { error: 'Quiz not found' }, status: :not_found
       end
     end
+    
 
   
     private
   
+    # def set_quiz
+    #   @quiz = Quiz.find_by(title: params[:title])
+    # end
+
     def set_quiz
       @quiz = Quiz.find_by(title: params[:id])
+      unless @quiz
+        render json: { error: 'Quiz not found' }, status: :not_found
+      end
     end
   
     def quiz_params

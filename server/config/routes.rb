@@ -14,4 +14,6 @@ Rails.application.routes.draw do
 
  
   get '/quizzes/:id', to: 'quizzes#show_by_title'
+ 
+
 end
