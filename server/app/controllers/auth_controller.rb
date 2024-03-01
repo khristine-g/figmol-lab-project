@@ -1,27 +1,18 @@
 class AuthController < ApplicationController
-
+  require_relative '../mailers/password_reset_mailer'
 
 
   def signup
-    existing_user = User.find_by(email: user_params[:email])
+    user = User.new(user_params)
+    user.is_admin = false
 
-    if existing_user
-      render json: { error: 'A user with this email already exists.' }, status: :unprocessable_entity
+    if user.save
+      token = user.generate_jwt
+      render json: { token: token }
     else
-      user = User.new(user_params)
-
-      # Set is_admin to false by default
-      user.is_admin = false
-
-      if user.save
-        token = user.generate_jwt
-        render json: { token: token }
-      else
-        render json: { error: user.errors.full_messages.join(', ') }, status: :unprocessable_entity
-      end
+      render json: { error: user.errors.full_messages.join(', ') }, status: :unprocessable_entity
     end
   end
-  
 
   def login
     user = User.find_by(email: params[:email])
@@ -33,6 +24,23 @@ class AuthController < ApplicationController
       render json: { token: token, is_admin: user.is_admin }
     else
       render json: { error: 'Invalid email or password' }, status: :unauthorized
+    end
+  end
+
+
+ 
+
+
+  def forgot_password
+    user = User.find_by(email: params[:email])
+  
+    if user
+      user.generate_reset_password_token # Correct method name
+      PasswordResetMailer.with(user: user).reset_password_email(user).deliver_now
+  
+      render json: { message: 'Password reset instructions sent to your email.' }
+    else
+      render json: { error: 'User not found' }, status: :not_found
     end
   end
   
