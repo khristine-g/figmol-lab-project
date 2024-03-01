@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../Login.css';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuth } from './AuthContext';
 
 const Login = () => {
@@ -64,6 +65,7 @@ const Login = () => {
   };
 
   return (
+    <>
     <div className="login-form-container">
       <form onSubmit={handleSubmit} className="login-form">
         <div className="form-group">
@@ -91,12 +93,19 @@ const Login = () => {
             disabled={loading}
           />
         </div>
+
+      <Link to="/forgot-password">Forgot Password?</Link>
         {error && <p className="error-message">{error}</p>}
         <button type="submit" className="login-btn" disabled={loading}>
           {loading ? 'Logging in...' : 'Log In'}
         </button>
       </form>
     </div>
+
+
+
+
+    </>
   );
 };
 
