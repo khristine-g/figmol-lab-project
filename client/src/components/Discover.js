@@ -2,8 +2,15 @@ import React from 'react';
 import '../Discover.css';
 
 const Discover = () => {
+
+  
   return (
+    <>
+
+    <h1 className='discover-heading'>Discover more about us</h1>
     <div id = "about" className='discover-container'>
+
+   
 
 <div className='discover-content'>
 
@@ -45,6 +52,9 @@ const Discover = () => {
 
 <div className='discover-content2'>
 
+<img  className='discover2-img'src='https://img.freepik.com/premium-photo/women-students-library-with-laptop-studying-exam-research-project-with-education-young-female-people-study-group-search-internet-pc-learning-university-campus_590464-188334.jpg ' alt='discover-img' />
+
+
 
 
 </div>
@@ -52,9 +62,10 @@ const Discover = () => {
        
       
     </div>
+    </>
   )
 }
 
-export default Discover
+export default Discover;
 
 

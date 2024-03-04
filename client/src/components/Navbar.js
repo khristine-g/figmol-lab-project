@@ -18,38 +18,38 @@ function Navbar() {
           <li className='home-nav'> 
             <Link className="nav-list-item" to="/">
               
-              Home
+              HOME
             </Link>
           </li>
 
           <li> 
             <Link className="nav-list-item" to="/quizzes/titles">
-               Titles
+               TITLES
             </Link>
           </li>
 
           <li> 
           <ScrollLink className="nav-list-item" to="about" smooth={true} duration={500}>
-              About
+              ABOUT
             </ScrollLink>
           </li>
           <li> 
            
           <ScrollLink className="nav-list-item" to="contact" smooth={true} duration={500}>
-              Contact 
+              CONTACT 
             </ScrollLink>
             
           </li>
 
           <li> 
             <Link className="nav-list-item" to="/signup">
-              Signup
+              SIGNUP
             </Link>
           </li>
     
           <li> 
             <Link className="nav-list-item" to="/login">
-              Login
+              LOGIN
             </Link>
           </li>
 
