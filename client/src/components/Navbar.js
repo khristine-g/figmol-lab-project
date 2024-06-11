@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from './AuthContext'; 
-import { Link as ScrollLink } from 'react-scroll';
+// import { Link as ScrollLink } from 'react-scroll';
 
 import '../Navbar.css';
 
@@ -18,38 +18,38 @@ function Navbar() {
           <li className='home-nav'> 
             <Link className="nav-list-item" to="/">
               
-              HOME
+              Home
             </Link>
           </li>
 
           <li> 
             <Link className="nav-list-item" to="/quizzes/titles">
-               TITLES
+               Quizes
             </Link>
           </li>
 
-          <li> 
+          {/* <li> 
           <ScrollLink className="nav-list-item" to="about" smooth={true} duration={500}>
-              ABOUT
+              About
             </ScrollLink>
           </li>
           <li> 
            
           <ScrollLink className="nav-list-item" to="contact" smooth={true} duration={500}>
-              CONTACT 
+              Contact
             </ScrollLink>
             
-          </li>
+          </li> */}
 
           <li> 
             <Link className="nav-list-item" to="/signup">
-              SIGNUP
+              Signup
             </Link>
           </li>
     
           <li> 
             <Link className="nav-list-item" to="/login">
-              LOGIN
+              Login
             </Link>
           </li>
 

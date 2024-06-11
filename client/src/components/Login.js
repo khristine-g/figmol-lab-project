@@ -75,7 +75,6 @@ const Login = () => {
             className="form-control"
             id="email"
             aria-describedby="emailHelp"
-            placeholder="Enter email"
             value={email}
             onChange={handleEmailChange}
             disabled={loading}
@@ -87,7 +86,6 @@ const Login = () => {
             type="password"
             className="form-control"
             id="password"
-            placeholder="Password"
             value={password}
             onChange={handlePasswordChange}
             disabled={loading}

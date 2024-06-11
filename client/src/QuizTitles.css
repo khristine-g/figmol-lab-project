@@ -1,36 +1,38 @@
-.title-header{
 
-    color:green;
-    margin: 30px;
-    margin-top: 100px;
-    margin-left: 400px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+.title-header {
+    color: grey;
+    margin: 100px 30px 30px 400px;
 }
-.Quiz-title{
-    
+
+
+.Quiz-title {
     list-style: none;
-   
+    padding: 0;
 }
-.quiz-list{
 
+
+.quiz-list {
     margin: 10px;
     padding: 10px;
-    width: 30vw;
-    background-color: orangered;
-    border-radius: 64px;
-  margin-left: 300px;
-  
-   
-   
+    width: 50vw;
+    margin-left: 300px;
+    background-color: #f5f5f5; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
-.quiz-list a{
-    text-decoration: none;
-    color:wheat;
+
+
+.quiz-list a {
+    text-decoration: none; 
+    color: #333; 
     font-size: 20px;
-   
+    display: block; 
     padding: 20px;
-
-
+    transition: background-color 0.3s; 
 }
+
+
+.quiz-list a:hover {
+    background-color: #e0e0e0; 
+}
+

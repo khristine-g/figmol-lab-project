@@ -123,7 +123,6 @@ const Signup = ({ csrfToken }) => {
               type="text"
               className="form-control"
               id="name"
-              placeholder="Enter your name"
               value={name}
               onChange={handleNameChange}
               required
@@ -137,7 +136,6 @@ const Signup = ({ csrfToken }) => {
               className="form-control"
               id="email"
               aria-describedby="emailHelp"
-              placeholder="Enter email"
               value={email}
               onChange={handleEmailChange}
               required
@@ -150,7 +148,6 @@ const Signup = ({ csrfToken }) => {
               type="password"
               className="form-control"
               id="password"
-              placeholder="Password"
               value={password}
               onChange={handlePasswordChange}
               required
@@ -163,7 +160,6 @@ const Signup = ({ csrfToken }) => {
               type="password"
               className="form-control"
               id="confirmPassword"
-              placeholder="Confirm password"
               value={confirmPassword}
               onChange={handleConfirmPasswordChange}
               required

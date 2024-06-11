@@ -47,7 +47,7 @@ const Contact = () => {
           </form>
         </div>
         <div className="image-container">
-          <img  className='contact-img'src="https://www.aier.org/wp-content/uploads/2022/12/graduationcaps-1200x1200-cropped.jpg" alt="Contact Img" />
+          <img  className='contact-img'src=" https://st2.depositphotos.com/4431055/11856/i/450/depositphotos_118566586-stock-photo-student-man-with-laptop.jpg" alt="Contact Img" />
         </div>
       </div>
     </div>

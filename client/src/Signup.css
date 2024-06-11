@@ -25,7 +25,7 @@
     /* background-color: #ddd; */
     color: black;
   
-    width: 700px;
+    width: 500px;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -64,19 +64,19 @@
   }
   
   .signup-btn {
-    background-color: blue;
+    background-color: black;
     color: #fff;
     border: none;
-    border-radius: 64px;
+    border-radius: 14px;
     padding: 8px 16px;
     cursor: pointer;
-    width: 400px;
-    margin-left: 150px;
+    width: 200px;
+    margin-left: 130px;
 
   }
   
   .signup-btn:hover {
-    background-color: rgb(32, 75, 32);
+    background-color: grey;
   }
   
  
